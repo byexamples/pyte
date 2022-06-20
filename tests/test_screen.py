@@ -307,7 +307,7 @@ def test_set_mode():
     assert screen.cursor.hidden
 
 
-def test_draw_X():
+def test_draw():
     # ``DECAWM`` on (default).
     screen = pyte.Screen(3, 3)
     screen.set_mode(mo.LNM)
@@ -341,7 +341,6 @@ def test_draw_X():
     assert (screen.cursor.y, screen.cursor.x) == (0, 3)
     consistency_asserts(screen)
 
-    #import pudb ; pudb.set_trace()
     # ``IRM`` mode is on, expecting new characters to move the old ones
     # instead of replacing them.
     screen.set_mode(mo.IRM)
